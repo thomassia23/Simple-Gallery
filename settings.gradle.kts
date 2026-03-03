@@ -11,10 +11,14 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-        jcenter()
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
         maven(url = "https://artifactory.img.ly/artifactory/imgly")
+        // Spring repository for AndroidHive imagefilters
+        maven { setUrl("https://repo.spring.io/libs-milestone") }
+        // Keep jcenter for Google VR SDK (still available there)
+        @Suppress("DEPRECATION")
+        jcenter()
     }
 }
 
